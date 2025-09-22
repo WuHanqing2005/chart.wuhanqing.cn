@@ -18,14 +18,15 @@
 
 <!-- This snippet is used in production (included from viewer.html) -->
 <!-- <link rel="resource" type="application/l10n" href="./assets/js/pdfviewer/locale.json"> -->
-<script src="./pdfviewer/pdf.mjs" type="module"></script>
+<script src="./pdfviewer/pdf.js" type="module"></script>
 
 <link rel="stylesheet" href="./assets/css/pdfviewer/viewer.css">
 <script src="/assets/js/swal2.js"></script>
 
-<script src="./pdfviewer/viewer.mjs" type="module"></script>
-<script src="./pdfviewer/pdf.worker.mjs" type="module"></script>
+<script src="./pdfviewer/viewer.js" type="module"></script>
+<script src="./pdfviewer/pdf.worker.js" type="module"></script>
 
+<!--
 <script>
     // Check if the URL contains the query string
     document.addEventListener('DOMContentLoaded', function () {
@@ -40,6 +41,49 @@
         }
     });
 </script>
+-->
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const params = new URLSearchParams(window.location.search);
+    let pdfUrl = params.get('url');
+
+    if (!pdfUrl) {
+        Swal.fire({
+            title: 'Error',
+            text: 'PDF 文件路径未提供，请通过 "?url=你的PDF路径" 传入。',
+            icon: 'error',
+        });
+        return;
+    }
+
+    pdfUrl = decodeURIComponent(pdfUrl);
+
+    const container = document.getElementById('viewerContainer');
+    const eventBus = new pdfjsViewer.EventBus();
+    const linkService = new pdfjsViewer.PDFLinkService({ eventBus });
+    const pdfViewer = new pdfjsViewer.PDFViewer({
+        container: container,
+        eventBus: eventBus,
+        linkService: linkService
+    });
+    linkService.setViewer(pdfViewer);
+
+    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.10.38/pdf.worker.min.js';
+
+    pdfjsLib.getDocument(pdfUrl).promise.then(pdfDoc => {
+        pdfViewer.setDocument(pdfDoc);
+        linkService.setDocument(pdfDoc, null);
+    }).catch(err => {
+        Swal.fire({
+            title: 'Error',
+            text: '无法打开 PDF，请检查文件路径或文件是否存在。',
+            icon: 'error'
+        });
+    });
+});
+</script>
+
+
 
 <div id="outerContainer">
 
