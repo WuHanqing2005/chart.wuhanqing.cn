@@ -2922,6 +2922,9 @@
             "ZSSS-2D-APDC.pdf",
             "ZSSS-2E-APDC.pdf",
             "ZSSS-2F-APDC.pdf",
+            "ZSSS-2V01-DGS.pdf",
+            "ZSSS-2V02-DGS.pdf",
+            "ZSSS-2V03-DGS.pdf",
             "ZSSS-4A-AOC RWY18L-36R.pdf",
             "ZSSS-4B-AOC RWY18R-36L.pdf",
             "ZSSS-6A-FDA.pdf",
@@ -3660,9 +3663,12 @@
             "ZWWW-5L-5-IAC RNAV ILS-DME z RWY26L.pdf",
             "ZWWW-5L-6-IAC ILS-DME y RWY26L.pdf",
             "ZWWW-5L-7-IAC RNAV ILS-DME z RWY26R.pdf",
-            "ZWWW-5L-8-IAC ILS-DME y RWY26R.pdf",
+            "ZWWW-5L-8-IAC RNAV CAT-II-III ILS-DME z RWY26R.pdf",
+            "ZWWW-5L-9-IAC ILS-DME y RWY26R.pdf",
+            "ZWWW-5L-10-IAC CAT-II-III ILS-DME y RWY26R.pdf",
             "ZWWW-6A-1-AOC RWY08L-26R.pdf",
-            "ZWWW-6A-2-AOC RWY08R-26L.pdf"
+            "ZWWW-6A-2-AOC RWY08R-26L.pdf",
+            "ZWWW-6D-1-PATC RWY26R.pdf"
         ]
     },
     {
