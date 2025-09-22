@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daniel_清寒的航图查询网站</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="/assets/js/swal2.js"></script>
+
+    <!-- 防止网页产生缓存 -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+</head>
+<body>
+<div class="container">
+    <!-- 左侧机场列表区 -->
+    <div class="card left-panel">
+        <h2 class="card-header" id="title-header">Daniel_清寒的航图查询网站</h2>
+        <div class="card-body">
+            <div class="search-section">
+                <div class="search-box-wrapper">
+                    <input type="text" id="search-box" placeholder="请输入机场名称/四字码进行搜索"
+                           oninput="filterList()">
+                </div>
+            </div>
+            <div class="airport-list-section">
+				<div class="header-container">
+					<h2>航图列表</h2>
+					
+				</div>
+				<ul id="airport-list">
+					<!-- 动态生成的机场列表 -->
+				</ul>
+			</div>
+        </div>
+    </div>
+
+    <!-- 右侧航图显示区 -->
+    <div class="card right-panel">
+        <div class="card-header">
+            <h2>航图显示区</h2>
+            <div class="control-buttons">
+						<button id="language-switch" onclick="switchLanguage()">中文/English</button>
+						<select id="theme-switch" onchange="switchTheme()">
+                            <option value="light">亮色主题</option>
+                            <option value="dark">深色主题</option>
+                            <option value="bilibili">Bilibili主题</option>
+                            <option value="win11">Win11主题</option>
+                            <option value="coolapk">酷安主题</option>
+                            <option value="gold">金色主题</option>
+                        </select>
+			</div>
+        </div>
+
+
+        <div class="card-body">
+            <div id="website-label" class="info-card">
+                <!-- 网页维护信息显示区 -->
+				
+                <h2>服务器停用预告</h2>
+				<p class="info-text">
+					航图挂载的服务器，将在2025年9月17日到期，届时可能会花费几天的时间将航图文件移植到新的服务器，但是网页并不会关闭，如带来不便请多谅解。
+                </p>
+				<p class="info-text">
+					如有任何问题或建议，请联系微信：Daniel_Qinghan
+				</p><br>
+				
+                <!-- 网页维护信息显示区结束-->
+
+
+                <h3>WEBSITE VERSION: 2025.08.11</h3>
+                <h3>CHART VERSION: EAIP2025-09.V1.4_Web</h3>
+                <p class="info-text">
+                    2025-08-11 06:00
+                    新增机场：全部公开的EAIP2025-09.V1.4_Web版本的中国AIP航图
+                </p>
+                <p class="info-text">
+                    欢迎联系网站作者 微信：whq20050121 邮箱：wuhanqing2005@gmail.com
+                </p>
+                <p class="info-text">
+                    <span>欢迎访问我的个人网站：</span>
+                    <a href="https://wuhanqing.rth2.xyz" target="_blank">https://wuhanqing.rth2.xyz</a>
+                </p>
+				<p class="info-text">
+                    
+                    <div style="display: inline-flex; align-items: center;">
+                        <span>感谢网页创作者：</span>
+                        <!-- Wu Hanqing -->
+                        <img src="https://avatars.githubusercontent.com/u/166130352?s=400&u=ab1f790ea42eab122ca07a1fb3c772ea667c7f03&v=4" alt="WuHanqing2005" style="width: 30px; height: 30px; border-radius: 50%;">
+                        <a href="https://github.com/WuHanqing2005" target="_blank" style="margin-left: 8px;">WuHanqing2005</a>
+                        <!-- Sam Sam -->
+                        <img src="https://avatars.githubusercontent.com/u/58818070?v=4" alt="Sam Sam Avatar" style="width: 30px; height: 30px; border-radius: 50%;">
+                        <a href="https://github.com/samleong123" target="_blank" style="margin-left: 8px;">Sam Sam</a>
+                        <!-- _Chenbing (BG7MUZ) --><img src="https://avatars.githubusercontent.com/u/39197918?v=4" alt="Chenbing Avatar" style="width: 30px; height: 30px; border-radius: 50%;">
+                        <a href="https://github.com/muzilib" target="_blank" style="margin-left: 8px;">_Chenbing (BG7MUZ)</a>
+                    </div>
+                </p>
+            </div>
+
+            <div id="pdf-file-label" class="info-card">
+                <p id="pdf-path" class="info-text"></p>
+            </div>
+            <div id="pdf-file-content" class="pdf-section">
+                <iframe id="pdf-viewer" src="" width="100%" height="100%"></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="assets/js/script.js"></script>
+</body>
+</html>
