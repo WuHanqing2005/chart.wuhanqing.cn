@@ -346,3 +346,12 @@ window.onload = function() {
     // 清空 Cookie
     document.cookie = "";
 };
+
+// 微信号点击复制剪贴板
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(function() {
+    alert("微信号已复制: " + text);
+  }).catch(function(err) {
+    alert("复制失败: " + err);
+  });
+}
