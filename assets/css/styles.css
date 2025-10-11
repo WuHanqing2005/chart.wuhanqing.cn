@@ -560,3 +560,30 @@ body::before {
     outline: none;
     box-shadow: 0 0 0 2px var(--highlight-color);
 }
+
+/* 网页创作者整体 */
+.creators {
+    display: flex;
+    flex-wrap: wrap;      /* 换行 */
+    align-items: center;
+    gap: 8px;             /* 元素间距 */
+}
+
+/* 头像 + 名称的容器 */
+.creators-list {
+    display: flex;
+    flex-wrap: wrap;      /* 多个头像+姓名换行 */
+    gap: 8px;
+}
+
+/* 限制头像大小 */
+.creators-list img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+/* 姓名保持不换行 */
+.creators-list a {
+    white-space: nowrap;
+}

@@ -41,9 +41,6 @@ document.addEventListener('DOMContentLoaded', function () {
     xhr.send();
 });
 
-
-
-
 let isChinese = false; // 默认显示英文
 
 // 中英文切换按钮
@@ -57,76 +54,118 @@ function switchLanguage() {
 // 翻译航图名称的函数，注意列表元素后不要缺英文逗号，不然会导致机场列表消失
 function translatePageName(pageName) {
     const translations = {
+        // === 基础航图类别 ===
         '-APDC': '-机场停机位置图',
         '-ADC': '-机场图',
         '-AD': '-机场数据',
         '-AOC': '-机场障碍物图',
-        'ATCSMAC': '空中交通管制最低高度图',
-        '-DGS': '-目视停靠引导系统',
+        '-GMC': '-机场地面移动图',
         '-PATC': '-精密进近地形图',
+        '-DGS': '-目视停靠引导系统',
         '-FDA': '-紧急放油区',
-        'RWY': '跑道',
         '-SID': '-标准离场程序图',
         '-STAR': '-标准进场程序图',
-        'RNAV': '区域导航进近',
-        'RNP': '所需导航性能进近',
         '-IAC': '-仪表进近图',
-        '-GMC': '-机场地面移动图',
-        'ILS': 'ILS仪表着陆系统进近',
-        'LOC': 'LOC航向道进近',
-        'LDA': 'LDA直线进近',
-        'ILS-DME': '仪表着陆系统进近',
-        'VOR': 'VOR非精密进近',
-        'VOR-DME': 'VOR非精密进近',
-        'GLS': 'GLS地面增强着陆系统进近',
+        'ATCSMAC': '空中交通管制最低高度图',
+
+        // === 导航系统与进近类型 ===
+        'ILS-DME': 'ILS-DME 仪表着陆系统进近（含测距）',
+        'ILS': 'ILS 仪表着陆系统进近',
+        'LOC': 'LOC 航向道进近',
+        'LDA': 'LDA 直线进近',
+        'VOR-DME': 'VOR 非精密进近',
+        'VOR': 'VOR 非精密进近',
+        'GLS': 'GLS 地基增强系统进近',
+        'RNAV': '区域导航',
+        'RNP': '所需导航性能',
+        '\\(AR\\)': '（授权航线）',
+
+        // === 类别等级 ===
         'CAT-I-II-III': '一类/二类/三类',
         'CAT-I-II': '一类/二类',
         'CAT-II-III': '二类/三类',
         'CAT-I': '一类',
         'CAT-II': '二类',
         'CAT-III': '三类',
+        'CAT II & III': '二类/三类',
 
+        // === 通用标题 ===
         'WAYPOINT LIST': '航路点坐标',
         'DATABASE CODING TABLE': '数据库编码表',
         'AIRPORT DATA': '机场数据',
         'AERODROME CHART': '机场图',
         'AERODROME OBSTRUCTION CHART': '机场障碍物图',
+        'AERODROME SURFACE MOVEMENT CHART': '机场地面移动图',
         'ATC SURVEILLANCE MINIMUM ALTITUDE CHART': '空中交通管制最低高度图',
         'DOCKING GUIDANCE SYSTEM': '目视停靠引导系统',
-        'TAXIWAY': '滑行道',
-        'FOR': '对于',
-        'AERODROME SURFACE MOVEMENT CHART': '机场地面移动图',
-        'AERODROME OBSTACLE CHART': '机场障碍物图',
         'PRECISION APPROACH TERRAIN CHART': '精密进近地形图',
-        'DEPARTURE': '离场',
-        'ARRIVAL': '进场',
         'FUEL DUMPING AREA': '紧急放油区',
         'AIRCRAFT PARKING CHART': '机场停机位置图',
+        'TAXIWAY': '滑行道',
         'TAXIING ROUTES CHART': '滑行路线图',
-        'BY ATC': '经空中交通管制许可',
         'OPERATIONAL RULES': '操作规程',
+        'BY ATC': '经空中交通管制许可',
+        'FOR': '对于',
         'TO NORTH': '去北侧',
         'TO SOUTH': '去南侧',
         'TO EAST': '去东侧',
         'TO WEST': '去西侧',
 
+        // === 图名通用（英文版）===
         'Aerodrome Chart': '机场图',
         'Aircraft Parking-Docking Chart': '机场停机位置图',
         'Aerodrome Obstacle Chart': '机场障碍物图',
-        'type A': 'A型',
-        'type B': 'B型',
-        'type C': 'C型',
         'Precision Approach Terrain Chart': '精密进近地形图',
-        'Standard Departure Chart - Instrument': '标准离场程序图',
-        'Standard Departure Chart': '标准离场程序图',
-        'Standard Arrival Chart - Instrument': '标准进场程序图',
-        'Standard Arrival Chart': '标准进场程序图',
+        'Standard Departure Chart - Instrument': '标准仪表离场程序图',
+        'Standard Arrival Chart - Instrument': '标准仪表进场程序图',
         'Instrument Approach Chart': '仪表进近图',
         'Other Chart': '其他图表',
-        'VISUAL': '目视',
-        'HIGHWAY': '高速公路',
-        'HOLDING PATTERN': '标准等待程序',
-        'ATTACHMENT': '附件',
+
+        // === ICAO 障碍物图类型 ===
+        'Aerodrome Obstacle Chart - ICAO type A': '机场障碍物图（ICAO A型）',
+        'Aerodrome Obstacle Chart - ICAO type B': '机场障碍物图（ICAO B型）',
+        'ICAO type A': 'ICAO A型',
+        'ICAO type B': 'ICAO B型',
+
+        // === 其他图表 ===
+        'Visual REP': '目视报告点图',
+        'MVA CHART': '最低管制高度图',
+        'LDG CHART': '着陆参考图',
+        'HIGHWAY VISUAL RWY34R': '高速公路目视进近图（跑道34R）',
+        'HOLDING PATTERN-RNAV': 'RNAV 等待航线图',
+        'HOLDING PATTERN': '标准等待航线图',
+        'Kawasaki Petrochemical Complex': '川崎石化区',
+        '(ATTACHMENT-1)': '（附件1）',
+
+        // === 通用典型航图文件 ===
+        'AD CHART': '机场图',
+        'AIRCRAFT PARKING DOCKING CHART': '机场停机位置图',
+        'AD GROUND MOVEMENT CHART': '机场地面移动图',
+        'AD OBSTACLE CHART TYPE A': '机场障碍物图（A型）',
+        'AD OBSTACLE CHART TYPE B': '机场障碍物图（B型）',
+        'AERODROME OBST CHART': '机场障碍物图',
+        'DOCKING GUIDANCE SYS': '目视停靠引导系统',
+        'FUEL DUMP AREA': '紧急放油区',
+        'BIRD CONCENTRATION CHART': '鸟类活动密集区图',
+        'TAXIING ROUTES CHART': '滑行路线图',
+        'OPERATIONAL RULES': '操作规程',
+        'AREA CHART': '区域航图',
+        'AREA CHART\\(DEP\\)': '区域航图（离场）',
+        'AREA CHART\\(ARR\\)': '区域航图（进场）',
+        'SID.pdf': '标准离场程序图',
+        'STAR.pdf': '标准进场程序图',
+        'ATC SURVEILLANCE MINIMUM ALTITUDE CHART': '空中交通管制最低高度图',
+        'INSTR APCH CHART': '仪表进近图',
+        'VISUAL APCH CHART': '目视进近图',
+        'BIRD CONCENTRATION CHART': '鸟类活动密集区图',
+        'PRECISION APCH TERRAIN CHART': '精密进近地形图',
+        'TEXT.pdf': '文字说明文件',
+
+        // === 最后翻译 ===
+        'RWY': '跑道',
+        'CHART': '图表',
+        '\\(DEP\\)': '（离场）',
+        '\\(ARR\\)': '（进场）',
     };
 
 // 按照翻译列表的顺序进行替换
