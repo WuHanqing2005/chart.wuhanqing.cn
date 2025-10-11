@@ -1,8 +1,8 @@
-# aviation-chart.rth2.xyz
+# chart,wuhanqing.cn
 
 This is an aviation chart inquiry website by Wu Hanqing.
 
-雾岛听风航图查询网站：https://aviation-chart.rth2.xyz
+Daniel_清寒的航图查询网站：https://chart,wuhanqing.cn
 
 新鲜出炉航图网站，航图慢速更新中！欢迎前来访问体验并提出修改意见！
 
@@ -12,11 +12,11 @@ This is an aviation chart inquiry website by Wu Hanqing.
 
 后续会继续更新更多国内机场以及国外机场，也欢迎大家提出机场航图需求，以便后续尽早上传更新！
 
-WEBSITE VERSION: 2025.08.11
+WEBSITE VERSION: 2025.10.12
 
-CHART VERSION: EAIP2025-09.V1.4_Web
+CHART VERSION: EAIP2025-11.V1.3_Web
 
-————————————————————
+---
 
 本网页为基于热铁盒网页托管，由吴瀚庆、Sam Sam、_Chenbing (BG7MUZ)等人创建的一个简易的航图查询网站，创建于2025年1月20日。
 
@@ -24,7 +24,7 @@ CHART VERSION: EAIP2025-09.V1.4_Web
 
 欢迎访问我的个人网站：https://wuhanqing2005.github.io/
 
-————————————————————
+---
 
 更新日志
 
