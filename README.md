@@ -1,4 +1,4 @@
-# chart,wuhanqing.cn
+# chart.wuhanqing.cn
 
 This is an aviation chart inquiry website by Wu Hanqing.
 
