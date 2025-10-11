@@ -2,7 +2,8 @@
 
 This is an aviation chart inquiry website by Wu Hanqing.
 
-Daniel_清寒的航图查询网站：https://chart,wuhanqing.cn
+Daniel_清寒的航图查询网站：
+<a href="https://chart.wuhanqing.cn">https://chart.wuhanqing.cn</a>
 
 新鲜出炉航图网站，航图慢速更新中！欢迎前来访问体验并提出修改意见！
 
