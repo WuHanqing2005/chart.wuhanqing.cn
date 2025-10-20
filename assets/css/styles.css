@@ -1,203 +1,80 @@
 :root {
-    --themes: {
-        light: {
-            --bg-color: rgba(240, 242, 245, 0.75);
-            --text-color: #333333;
-            --panel-bg: rgba(255, 255, 255, 0.75);
-            --highlight-color: #007bff;
-            --border-color: #e1e4e8;
-            --button-bg: #e9ecef;
-            --button-hover: #dee2e6;
-            --card-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
-            --card-radius: 6px;
-        },
-        dark: {
-            --bg-color: rgba(26, 26, 26, 0.75);
-            --text-color: #ffffff;
-            --panel-bg: rgba(36, 36, 36, 0.75);
-            --highlight-color: #4dabf7;
-            --border-color: #404040;
-            --button-bg: #2d2d2d;
-            --button-hover: #3d3d3d;
-            --card-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
-        },
-        bilibili: {
-            --bg-color: rgba(255, 255, 255, 0.75);
-            --text-color: #333333;
-            --panel-bg: rgba(255, 255, 255, 0.9);
-            --highlight-color: #ff6b9d; /* Bilibili粉 */
-            --border-color: #e8e8e8;
-            --button-bg: #f8f8f8;
-            --button-hover: #e0e0e0;
-            --card-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
-        },
-        win11: {
-            --bg-color: rgba(242, 243, 245, 0.75);
-            --text-color: #333333;
-            --panel-bg: rgba(255, 255, 255, 0.9);
-            --highlight-color: #0078d7; /* Win11蓝 */
-            --border-color: #c8c8c8;
-            --button-bg: #e8e8e8;
-            --button-hover: #d8d8d8;
-            --card-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
-        },
-        coolapk: {
-            --bg-color: rgba(249, 252, 249, 0.75);
-            --text-color: #333333;
-            --panel-bg: rgba(255, 255, 255, 0.9);
-            --highlight-color: #5bb72a; /* 酷安绿 */
-            --border-color: #e8e8e8;
-            --button-bg: #f8f8f8;
-            --button-hover: #e0e0e0;
-            --card-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
-        }
-    }
-}
-
-/* 默认使用亮色主题 */
-:root {
-    --bg-color: rgba(240, 242, 245, 0.75);
+    /* 默认主题（亮色） */
+    --bg-color: rgba(240, 242, 245, 0.6);
     --text-color: #333333;
-    --panel-bg: rgba(255, 255, 255, 0.75);
+    --panel-bg: rgba(255, 255, 255, 0.8);
     --highlight-color: #007bff;
     --border-color: #e1e4e8;
-    --button-bg: #e9ecef;
-    --button-hover: #dee2e6;
+    --button-bg: rgba(255, 255, 255, 0.5);
+    --button-hover: rgba(255, 255, 255, 0.7);
     --card-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
     --card-radius: 6px;
 }
 
 /* 深色主题 */
 [data-theme="dark"] {
-    --bg-color: rgba(26, 26, 26, 0.75);
+    --bg-color: rgba(26, 26, 26, 0.6);
     --text-color: #ffffff;
-    --panel-bg: rgba(36, 36, 36, 0.75);
+    --panel-bg: rgba(36, 36, 36, 0.8);
     --highlight-color: #4dabf7;
     --border-color: #404040;
-    --button-bg: #2d2d2d;
-    --button-hover: #3d3d3d;
+    --button-bg: rgba(60, 60, 60, 0.6);
+    --button-hover: rgba(80, 80, 80, 0.8);
     --card-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
 }
 
 /* Bilibili主题 */
 [data-theme="bilibili"] {
-    --bg-color: #FFB5CE;
+    --bg-color: rgba(255, 140, 180, 0.6);
     --text-color: #333333;
-    --panel-bg: rgba(255, 255, 255, 0.9);
+    --panel-bg: rgba(255, 255, 255, 0.8);
     --highlight-color: #ff6b9d;
     --border-color: #ff6b9d;
-    --button-bg: #ff6b9d;
-    --button-hover: #ff5280;
+    --button-bg: rgba(255, 107, 157, 0.6);
+    --button-hover: rgba(255, 82, 128, 0.8);
     --card-shadow: 0 2px 12px rgba(255, 107, 157, 0.2);
     --card-radius: 6px;
 }
 
-/* Bilibili 主题下的标题栏 */
-[data-theme="bilibili"] .left-panel .card-header,
-[data-theme="bilibili"] .right-panel .card-header {
-    background-color: rgba(255, 107, 157, 0.2); /* 标题栏背景色 - 浅粉色 */
-    color: #333333; /* 标题文字颜色 - 深灰色 */
-}
-
-/* Bilibili 主题下的机场列表背景 */
-[data-theme="bilibili"] .left-panel .card-body {
-    background-color: rgba(255, 255, 255, 0.9);
-}
-
-/* Bilibili 主题下的航图显示区背景 */
-[data-theme="bilibili"] .right-panel .card-body {
-    background-color: rgba(255, 255, 255, 0.9);
-}
-
 /* Win11主题 */
 [data-theme="win11"] {
-    --bg-color: #7FBCEB;
+    --bg-color: rgba(127, 188, 235, 0.6);
     --text-color: #333333;
-    --panel-bg: rgba(255, 255, 255, 0.9);
+    --panel-bg: rgba(255, 255, 255, 0.8);
     --highlight-color: #0078d7;
     --border-color: #0078d7;
-    --button-bg: #0078d7;
-    --button-hover: #005a9e;
+    --button-bg: rgba(0, 120, 215, 0.6);
+    --button-hover: rgba(0, 90, 158, 0.8);
     --card-shadow: 0 2px 12px rgba(0, 120, 215, 0.2);
     --card-radius: 6px;
 }
 
-/* Win11 主题下的标题栏 */
-[data-theme="win11"] .left-panel .card-header,
-[data-theme="win11"] .right-panel .card-header {
-    background-color: rgba(0, 120, 215, 0.2); /* 标题栏背景色 - 浅蓝色 */
-    color: #333333; /* 标题文字颜色 - 深灰色 */
-}
-
-/* Win11 主题下的机场列表背景 */
-[data-theme="win11"] .left-panel .card-body {
-    background-color: rgba(242, 243, 245, 0.9);
-}
-
-/* Win11 主题下的航图显示区背景 */
-[data-theme="win11"] .right-panel .card-body {
-    background-color: rgba(242, 243, 245, 0.9);
-}
-
 /* 酷安主题 */
 [data-theme="coolapk"] {
-    --bg-color: #adda95;
+    --bg-color: rgba(173, 218, 149, 0.6);
     --text-color: #333333;
-    --panel-bg: rgba(255, 255, 255, 0.9);
+    --panel-bg: rgba(255, 255, 255, 0.8);
     --highlight-color: #5bb72a;
     --border-color: #5bb72a;
-    --button-bg: #5bb72a;
-    --button-hover: #4a8f22;
+    --button-bg: rgba(91, 183, 42, 0.6);
+    --button-hover: rgba(74, 143, 34, 0.8);
     --card-shadow: 0 2px 12px rgba(91, 183, 42, 0.2);
     --card-radius: 6px;
 }
 
-/* 酷安 主题下的标题栏 */
-[data-theme="coolapk"] .left-panel .card-header,
-[data-theme="coolapk"] .right-panel .card-header {
-    background-color: rgba(91, 183, 42, 0.2); /* 标题栏背景色 - 浅绿色 */
-    color: #333333; /* 标题文字颜色 - 深灰色 */
-}
-
-/* 酷安 主题下的机场列表背景 */
-[data-theme="coolapk"] .left-panel .card-body {
-    background-color: rgba(249, 252, 249, 0.9);
-}
-
-/* 酷安 主题下的航图显示区背景 */
-[data-theme="coolapk"] .right-panel .card-body {
-    background-color: rgba(249, 252, 249, 0.9);
-}
-
 /* 金色主题 */
 [data-theme="gold"] {
-    --bg-color: #ffeb7f;
+    --bg-color: rgba(255, 235, 127, 0.6);
     --text-color: #333333;
-    --panel-bg: rgba(255, 255, 255, 0.9);
+    --panel-bg: rgba(255, 255, 255, 0.8);
     --highlight-color: #ffd700;
     --border-color: #ffd700;
-    --button-bg: #ffd700;
-    --button-hover: #e5c100;
+    --button-bg: rgba(255, 215, 0, 0.6);
+    --button-hover: rgba(229, 193, 0, 0.8);
     --card-shadow: 0 2px 12px rgba(255, 215, 0, 0.2);
     --card-radius: 6px;
 }
 
-/* 金色 主题下的标题栏 */
-[data-theme="gold"] .left-panel .card-header,
-[data-theme="gold"] .right-panel .card-header {
-    background-color: rgba(255, 215, 0, 0.2); /* 标题栏背景色 - 浅金色 */
-    color: #333333; /* 标题文字颜色 - 深灰色 */
-}
-
-/* 金色 主题下的机场列表背景 */
-[data-theme="gold"] .left-panel .card-body {
-    background-color: rgba(255, 255, 255, 0.9);
-}
-
-/* 金色 主题下的航图显示区背景 */
-[data-theme="gold"] .right-panel .card-body {
-    background-color: rgba(255, 255, 255, 0.9);
-}
 
 body {
     margin: 0;
