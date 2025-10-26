@@ -176,7 +176,7 @@ function translatePageName(pageName) {
     return pageName;
 }
 
-// 显示PDF的函数
+// 点击后显示PDF的函数
 function showPDF(pdfFile) {
     if (determineDevice() === 'Android') {
         var currentUrl = window.location.href;
@@ -191,7 +191,10 @@ function showPDF(pdfFile) {
     document.getElementById('pdf-path').textContent = `当前打开的PDF文件路径: ${pdfFile}`;
     document.getElementById('pdf-file-label').style.display = 'block'
     document.getElementById('pdf-file-content').style.display = 'block'
-    document.getElementById('website-label').style.display = 'none'
+
+    // 点击显示PDF后 隐藏不必要的信息卡片
+    document.getElementById('website-label-1').style.display = 'none'
+    document.getElementById('website-label-2').style.display = 'none'
 
     // 判断是否为移动端设备，如果是移动端，则点击PDF名称后，自动滚动到页面最底部
     if (isMobileDevice()) {
@@ -358,7 +361,8 @@ function resetToHomePage() {
     document.getElementById('pdf-file-label').style.display = 'none';
     document.getElementById('pdf-file-content').style.display = 'none';
     // 显示网站标签信息
-    document.getElementById('website-label').style.display = 'block';
+    document.getElementById('website-label-1').style.display = 'block';
+    document.getElementById('website-label-2').style.display = 'block';
     // 重置PDF查看器的源
     pdfViewer.src = '';
     // 提示用户已返回主页
