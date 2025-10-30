@@ -464,3 +464,52 @@ body::before {
 .creators-list a {
     white-space: nowrap;
 }
+
+
+
+
+/* 备案区块图标样式 */
+
+/* 单个备案项 */
+.info-text.creators a {
+    display: inline-flex;      /* ✅ 避免内部内容被截断 */
+    align-items: center;       /* 图标和文字垂直居中 */
+    font-size: 16px;
+    color: var(--text-color, #666);
+    text-decoration: none;
+    white-space: nowrap;       /* ✅ 保证每个 a 标签内部不换行 */
+    transition: opacity 0.3s;
+
+    text-decoration: underline;          /* 加下划线 */
+    text-decoration-thickness: 1px;      /* 下划线粗细 */
+    text-underline-offset: 2px;          /* 下划线与文字的距离 */
+}
+
+/* 悬停时轻微透明变化 */
+.info-text.creators a:hover {
+    opacity: 0.85;
+}
+
+/* 图标样式（和上文相同） */
+.icp-icon {
+    width: 25px;
+    height: 25px;
+    object-fit: contain;
+    vertical-align: middle;
+    margin-right: 4px;
+    border-radius: 3px;
+    opacity: 0.9;
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+.info-text.creators a:hover .icp-icon {
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+/* GitHub头像略大一点（可选） */
+.info-text.creators .copyright .icp-icon {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+}
