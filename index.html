@@ -118,6 +118,25 @@
                     </div>
                 </div><br>
 
+                <!-- 不蒜子网站访问量统计 -->
+                <footer style="text-align: center; padding: 20px; color: #888; width: 100%;">
+                    <p>
+                        <!-- 
+                        关键修改：
+                        将 id 从 "busuanzi_value_site_pv" (站点总访问量)
+                        改为 "busuanzi_value_page_pv" (本页面总访问量)
+                        -->
+                        本站总访问量 <span id="busuanzi_value_page_pv"></span> 次
+                        <span style="margin: 0 10px;">|</span>
+                        <!-- 
+                        这个也可以对应修改，只统计本页面的访客数
+                        将 id 从 "busuanzi_value_site_uv" (站点总访客)
+                        改为 "busuanzi_value_page_uv" (本页面访客)
+                        -->
+                        全站总访问量 <span id="busuanzi_value_site_uv"></span> 人
+                    </p>
+                </footer>
+
                 <!-- 底部备案信息 -->
                 <div class="info-text creators">
                     <span><strong>备案信息：</strong></span>
@@ -147,5 +166,9 @@
     </div>
 </div>
 <script src="assets/js/script.js"></script>
+
+<!-- 不蒜子网站访问量统计脚本 -->
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
 </body>
 </html>
