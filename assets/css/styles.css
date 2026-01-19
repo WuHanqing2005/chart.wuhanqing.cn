@@ -140,6 +140,9 @@ body {
             padding: 15px;
             flex: 1;
             overflow-y: auto;
+            overflow-x: hidden;
+            touch-action: pan-y; /* 禁止左右滑动，保留纵向滚动 */
+            overscroll-behavior-x: none;
             width: 100%;
             box-sizing: border-box;
         }
@@ -441,16 +444,24 @@ body::before {
 /* 网页创作者整体 */
 .creators {
     display: flex;
-    flex-wrap: wrap;      /* 换行 */
-    align-items: center;
-    gap: 8px;             /* 元素间距 */
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 8px;
 }
 
 /* 头像 + 名称的容器 */
 .creators-list {
     display: flex;
-    flex-wrap: wrap;      /* 多个头像+姓名换行 */
+    flex-wrap: wrap;      /* 宽屏幕并排，窄屏幕换行 */
     gap: 8px;
+}
+
+/* 每个创作者项 */
+.creator-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;  /* 禁止内部换行 */
 }
 
 /* 限制头像大小 */
@@ -458,11 +469,20 @@ body::before {
     width: 30px;
     height: 30px;
     border-radius: 50%;
+    flex-shrink: 0;
 }
 
 /* 姓名保持不换行 */
 .creators-list a {
     white-space: nowrap;
+}
+
+/* 窄屏幕竖排 */
+@media (max-width: 768px) {
+    .creators-list {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 }
 
 

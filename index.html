@@ -61,7 +61,7 @@
 
         <div class="card-body">
             <!-- 维护信息显示区 -->
-            <div id="website-label-1" class="info-card" style="display: auto !important;">
+            <div id="website-label-1" class="info-card" style="display: none !important;">
                 <!-- style="display: none !important;" -->
                 <!-- 其中, none为不显示, auto为显示 -->
                 <h2>网页维护公告</h2>
@@ -116,44 +116,20 @@
 				<div class="info-text creators">
                     <span><strong>网页创作者：</strong></span>
                     <div class="creators-list">
-                        <!-- Wu Hanqing -->
-                        <img src="https://avatars.githubusercontent.com/u/166130352?s=400&u=ab1f790ea42eab122ca07a1fb3c772ea667c7f03&v=4" alt="WuHanqing2005">
-                        <a href="https://github.com/WuHanqing2005" target="_blank">WuHanqing2005</a>
-                        <!-- Sam Sam -->
-                        <img src="https://avatars.githubusercontent.com/u/58818070?v=4" alt="Sam Sam Avatar">
-                        <a href="https://github.com/samleong123" target="_blank">Sam Sam</a>
-                        <!-- _Chenbing (BG7MUZ) -->
-                        <img src="https://avatars.githubusercontent.com/u/39197918?v=4" alt="Chenbing Avatar">
-                        <a href="https://github.com/muzilib" target="_blank">_Chenbing (BG7MUZ)</a>
+                        <div class="creator-item">
+                            <img src="https://avatars.githubusercontent.com/u/166130352?s=400&u=ab1f790ea42eab122ca07a1fb3c772ea667c7f03&v=4" alt="WuHanqing2005">
+                            <a href="https://github.com/WuHanqing2005" target="_blank">WuHanqing2005</a>
+                        </div>
+                        <div class="creator-item">
+                            <img src="https://avatars.githubusercontent.com/u/58818070?v=4" alt="Sam Sam Avatar">
+                            <a href="https://github.com/samleong123" target="_blank">Sam Sam</a>
+                        </div>
+                        <div class="creator-item">
+                            <img src="https://avatars.githubusercontent.com/u/39197918?v=4" alt="Chenbing Avatar">
+                            <a href="https://github.com/muzilib" target="_blank">_Chenbing (BG7MUZ)</a>
+                        </div>
                     </div>
                 </div><br>
-
-                <!-- 不蒜子网站访问量统计 -->
-                <footer style="text-align: center; padding: 20px; color: #888; width: 100%;">
-                    <p>
-                        本站访客数 <span id="busuanzi_value_site_uv"></span> 人次
-                        <span style="margin: 0 10px;">|</span>
-
-                        本站总访问量 <span id="busuanzi_value_site_pv"></span> 次
-                    </p>
-                </footer>
-
-                <!-- 底部备案信息 -->
-                <div class="info-text creators">
-                    <span><strong>备案信息：</strong></span>
-                    <a href="https://beian.miit.gov.cn/#/Integrated/index" target="_blank" rel="noopener noreferrer" class="icp">
-                        <img src="./assets/img/beian-logo.png" alt="备案图标" class="icp-icon">
-                        辽ICP备2024043702号-1
-                    </a>
-                    <a href="https://beian.mps.gov.cn/" target="_blank" rel="noopener noreferrer" class="icp">
-                        <img src="./assets/img/beian-logo.png" alt="备案图标" class="icp-icon">
-                        公网安备案(待完善)
-                    </a>
-                    <a class="copyright" href="https://github.com/WuHanqing2005">
-                        <img src="./assets/img/profile_circle.png" alt="备案图标" class="icp-icon">
-                        ©WUHANQING2005
-                    </a>
-                </div>
 
                 <!-- Giscus 评论区 -->
                 <script src="https://giscus.app/client.js"
@@ -172,7 +148,35 @@
                     crossorigin="anonymous"
                     async>
                 </script>
+            </div>    
 
+            <div id="website-label-3" class="info-card">    
+                <!-- 底部备案信息 -->
+                <div class="info-text creators">
+                    <span><strong>备案信息：</strong></span>
+                    <a href="https://beian.miit.gov.cn/#/Integrated/index" target="_blank" rel="noopener noreferrer" class="icp">
+                        <img src="./assets/img/beian-logo.png" alt="备案图标" class="icp-icon">
+                        辽ICP备2024043702号-1
+                    </a>
+                    <a href="https://beian.mps.gov.cn/" target="_blank" rel="noopener noreferrer" class="icp">
+                        <img src="./assets/img/beian-logo.png" alt="备案图标" class="icp-icon">
+                        公网安备案(待完善)
+                    </a>
+                    <a class="copyright" href="https://github.com/WuHanqing2005">
+                        <img src="./assets/img/profile_circle.png" alt="备案图标" class="icp-icon">
+                        ©WUHANQING2005
+                    </a>
+                </div>
+
+                <!-- 不蒜子网站访问量统计 -->
+                <footer style="text-align: center; padding: 20px; color: #888; width: 100%;">
+                    <p>
+                        本站访客数 <span id="busuanzi_value_site_uv"></span> 人次
+                        <span style="margin: 0 10px;">|</span>
+
+                        本站总访问量 <span id="busuanzi_value_site_pv"></span> 次
+                    </p>
+                </footer>
             </div>
 
             <div id="pdf-file-label" class="info-card">
