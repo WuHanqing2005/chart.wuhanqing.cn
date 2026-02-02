@@ -253,6 +253,12 @@ document.addEventListener('DOMContentLoaded', function () {
     document.documentElement.setAttribute('data-theme', savedTheme);
     languageSwitch.textContent = isChinese ? '中文' : 'English';
 
+    // Initialize giscus according to current theme (dark => dark, others => light)
+    const initialGiscusTheme = (savedTheme === 'dark') ? 'dark' : 'light';
+    if (typeof insertGiscus === 'function') {
+        insertGiscus(initialGiscusTheme);
+    }
+
     // 初始化机场列表为折叠状态
     var xhr = new XMLHttpRequest();
     xhr.open('GET', './assets/js/files.json', true);
@@ -351,6 +357,14 @@ function switchTheme() {
         }
         Swal.fire('Success', `Switched to ${themeName} theme`, 'success');
     }
+
+    // Update giscus theme: dark => dark, other themes => light
+    try {
+        const giscusTheme = (selectedTheme === 'dark') ? 'dark' : 'light';
+        if (typeof insertGiscus === 'function') insertGiscus(giscusTheme);
+    } catch (e) {
+        console.error('Failed to update giscus theme:', e);
+    }
 }
 
 // 返回到主页的函数
@@ -397,4 +411,60 @@ function copyToClipboard(text) {
   }).catch(function(err) {
     alert("复制失败: " + err);
   });
+}
+
+// Insert or update giscus widget theme. Prefers postMessage; falls back to reloading the script.
+function insertGiscus(theme) {
+    const desired = (theme === 'dark') ? 'dark' : 'light';
+
+    // Try to update existing giscus iframe via postMessage (preferred)
+    try {
+        const iframe = document.querySelector('iframe.giscus-frame, iframe[src*="giscus.app"]');
+        if (iframe && iframe.contentWindow) {
+            iframe.contentWindow.postMessage({ giscus: { setConfig: { theme: desired } } }, 'https://giscus.app');
+            return;
+        }
+    } catch (e) {
+        console.warn('giscus postMessage failed, will try reload fallback', e);
+    }
+
+    // Fallback: reload the original script block (remove existing widget then append a new script)
+    try {
+        let originalScript = document.querySelector('script[src="https://giscus.app/client.js"]');
+        if (!originalScript) {
+            originalScript = document.querySelector('script[data-repo="WuHanqing2005/my-website-discussions"]');
+        }
+        if (!originalScript) {
+            console.warn('Original giscus script tag not found; cannot reload widget.');
+            return;
+        }
+
+        const parent = originalScript.parentElement;
+
+        // Remove any existing giscus-rendered node (class .giscus or iframe)
+        const existing = parent.querySelector('.giscus');
+        if (existing) existing.remove();
+        const existingIframe = parent.querySelector('iframe[src*="giscus.app"]');
+        if (existingIframe) existingIframe.remove();
+
+        // Create a fresh script element copying data-* attributes, but set new theme
+        const newScript = document.createElement('script');
+        newScript.src = 'https://giscus.app/client.js';
+        const dataAttrs = [
+            'data-repo', 'data-repo-id', 'data-category', 'data-category-id', 'data-mapping',
+            'data-strict', 'data-reactions-enabled', 'data-emit-metadata', 'data-input-position',
+            'data-lang', 'data-loading'
+        ];
+        dataAttrs.forEach(attr => {
+            const v = originalScript.getAttribute(attr);
+            if (v !== null) newScript.setAttribute(attr, v);
+        });
+        newScript.setAttribute('data-theme', desired);
+        newScript.crossOrigin = 'anonymous';
+        newScript.async = true;
+
+        parent.appendChild(newScript);
+    } catch (err) {
+        console.error('insertGiscus reload error:', err);
+    }
 }
