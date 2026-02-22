@@ -195,6 +195,7 @@ function showPDF(pdfFile) {
     // 点击显示PDF后 隐藏不必要的信息卡片
     document.getElementById('website-label-1').style.display = 'none'
     document.getElementById('website-label-2').style.display = 'none'
+    document.getElementById('website-label-3').style.display = 'none'
 
     // 判断是否为移动端设备，如果是移动端，则点击PDF名称后，自动滚动到页面最底部
     if (isMobileDevice()) {
@@ -377,6 +378,7 @@ function resetToHomePage() {
     // 显示网站标签信息
     document.getElementById('website-label-1').style.display = 'block';
     document.getElementById('website-label-2').style.display = 'block';
+    document.getElementById('website-label-3').style.display = 'block';
     // 重置PDF查看器的源
     pdfViewer.src = '';
     // 提示用户已返回主页
