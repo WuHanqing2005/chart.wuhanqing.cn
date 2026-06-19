@@ -187,9 +187,9 @@ function showPDF(pdfFile) {
         pdfViewer.src = `${pdfFile}`;
     }
 
-    // 更新页面上的文本内容以显示PDF文件的路径（调试用，取消注释即可恢复）
-    // document.getElementById('pdf-path').textContent = `当前打开的PDF文件路径: ${pdfFile}`;
-    // document.getElementById('pdf-file-label').style.display = 'block'
+    // 更新页面上的文本内容以显示PDF文件的路径
+    document.getElementById('pdf-path').textContent = `当前打开的PDF文件路径: ${pdfFile}`;
+    document.getElementById('pdf-file-label').style.display = 'block'
     document.getElementById('pdf-file-content').style.display = 'block'
 
     // 点击显示PDF后 隐藏不必要的信息卡片
@@ -224,9 +224,7 @@ function generateAirportList(query) {
             airport.pages.forEach(page => {
                 const pageItem = document.createElement('li');
                 pageItem.textContent = isChinese ? translatePageName(page) : page;
-
-                // 航图PDF加载路径
-                pageItem.onclick = () => showPDF(`https://r2.wuhanqing.cn/chart-wuhanqing-cn/Terminal/${airport.folder}/${page}`);
+                pageItem.onclick = () => showPDF(`./Terminal/${airport.folder}/${page}`);
                 subList.appendChild(pageItem);
             });
             airportList.appendChild(subList);
@@ -374,8 +372,8 @@ function switchTheme() {
 function resetToHomePage() {
     // 重置机场列表为初始状态（折叠）
     generateAirportList('');
-    // 隐藏PDF查看器和路径显示（调试用，取消注释即可恢复）
-    // document.getElementById('pdf-file-label').style.display = 'none';
+    // 隐藏PDF查看器和路径显示
+    document.getElementById('pdf-file-label').style.display = 'none';
     document.getElementById('pdf-file-content').style.display = 'none';
     // 显示网站标签信息
     document.getElementById('website-label-1').style.display = 'block';

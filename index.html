@@ -81,22 +81,21 @@
 
             <!-- 网页信息显示区 -->
             <div id="website-label-2" class="info-card">
-                <h3>WEBSITE VERSION: 2026.01.19</h3>
-                <h3>EAIP CHART VERSION: EAIP2026-02.V1.2_Web</h3>
+                <h3>WEBSITE VERSION: 2026.06.19</h3>
+                <h3>EAIP CHART VERSION: EAIP2026-07.V1.3_Web</h3>
 
+                <h3 class="info-text">
+                    2026-06-19 18:00(KST) 更新日志
+                </h3>
                 <p class="info-text">
-                    <strong>更新日志: </strong>2026-01-19 12:00(CST)
-                </p>
-                <p class="info-text">
-                    <!--
-                    <strong>新增：</strong>全部公开的<strong> EAIP2025-13.V1.3 </strong>全中国EAIP航图
-                    -->
-                    </strong>更新<strong>EAIP2026-02.V1.2_Web</strong>全中国EAIP航图
+                    1. 新增全部公开的<strong>EAIP2026-07.V1.3_Web</strong>全中国EAIP航图。<br>
+                    2. 将航图PDF文件存储位置改为 <strong>Cloudflare R2存储桶</strong>，加快航图加载速度。<br>
+                    3. 去除航图显示区对<strong>当前打开的PDF文件路径</strong>的调试信息显示，增大航图实际显示面积。
                 </p><br>
 
                 <p class="info-text">
                 <strong>下载本网站全部航图</strong><br>
-                    点击下载：<a href="https://r2.wuhanqing.cn/202602_Terminal.zip" download="202602_Terminal.zip">202602_Terminal.zip</a> 
+                    点击下载：<a href="http://r2.wuhanqing.cn/chart-wuhanqing-cn/202607_Terminal.zip" download="202607_Terminal.zip">202607_Terminal.zip</a> 
                 </p><br>
 
                 <p class="info-text">
@@ -158,10 +157,6 @@
                         <img src="./assets/img/beian-logo.png" alt="备案图标" class="icp-icon">
                         辽ICP备2024043702号-1
                     </a>
-                    <a href="https://beian.mps.gov.cn/" target="_blank" rel="noopener noreferrer" class="icp">
-                        <img src="./assets/img/beian-logo.png" alt="备案图标" class="icp-icon">
-                        公网安备案(待完善)
-                    </a>
                     <a class="copyright" href="https://github.com/WuHanqing2005">
                         <img src="./assets/img/profile_circle.png" alt="备案图标" class="icp-icon">
                         ©WUHANQING2005
@@ -179,9 +174,12 @@
                 </footer>
             </div>
 
+            <!-- PDF文件路径显示区（调试用，取消注释即可恢复显示）
             <div id="pdf-file-label" class="info-card">
                 <p id="pdf-path" class="info-text"></p>
             </div>
+            -->
+
             <div id="pdf-file-content" class="pdf-section">
                 <iframe id="pdf-viewer" src="" width="100%" height="100%"></iframe>
             </div>   
