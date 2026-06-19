@@ -27,26 +27,18 @@
 
 ## 🧭 网站作者
 
-<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin: 12px 0;">
-    <span style="font-weight: bold; white-space: nowrap;">网页创作者：</span>
-    <div style="display: flex; flex-wrap: wrap; gap: 16px;">
-        <div style="display: flex; align-items: center; gap: 8px; white-space: nowrap;">
-            <img src="https://avatars.githubusercontent.com/u/166130352?s=400&u=ab1f790ea42eab122ca07a1fb3c772ea667c7f03&v=4" alt="WuHanqing2005" style="width: 30px; height: 30px; border-radius: 50%;">
-            <a href="https://github.com/WuHanqing2005" target="_blank">WuHanqing2005</a>
-        </div>
-        <div style="display: flex; align-items: center; gap: 8px; white-space: nowrap;">
-            <img src="https://avatars.githubusercontent.com/u/58818070?v=4" alt="Sam Sam Avatar" style="width: 30px; height: 30px; border-radius: 50%;">
-            <a href="https://github.com/samleong123" target="_blank">Sam Sam</a>
-        </div>
-        <div style="display: flex; align-items: center; gap: 8px; white-space: nowrap;">
-            <img src="https://avatars.githubusercontent.com/u/39197918?v=4" alt="Chenbing Avatar" style="width: 30px; height: 30px; border-radius: 50%;">
-            <a href="https://github.com/muzilib" target="_blank">_Chenbing (BG7MUZ)</a>
-        </div>
-    </div>
-</div>
+**网页创作者：**
+
+<img src="https://avatars.githubusercontent.com/u/166130352?s=400&u=ab1f790ea42eab122ca07a1fb3c772ea667c7f03&v=4" width="24" height="24"> [WuHanqing2005](https://github.com/WuHanqing2005)
+
+<img src="https://avatars.githubusercontent.com/u/58818070?v=4" width="24" height="24"> [Sam Sam](https://github.com/samleong123)
+
+<img src="https://avatars.githubusercontent.com/u/39197918?v=4" width="24" height="24"> [_Chenbing (BG7MUZ)](https://github.com/muzilib)
+
+<br>
 
 📅 创建时间：**2025年1月20日**  
-📱 微信：<a href="javascript:void(0);" onclick="navigator.clipboard.writeText('Daniel_Qinghan')" style="color: #0366d6; text-decoration: none; border-bottom: 1px dashed #0366d6; cursor: pointer;">Daniel_Qinghan</a>（点击复制）  
+📱 微信：**Daniel_Qinghan**
 📧 邮箱：<a href="mailto:wuhanqing2005@gmail.com" style="color: #0366d6; text-decoration: none;">wuhanqing2005@gmail.com</a>  
 🌐 个人网站：<a href="https://wuhanqing2005.github.io/" target="_blank" style="color: #0366d6; text-decoration: none;">https://wuhanqing2005.github.io/</a>  
 
