@@ -344,7 +344,7 @@ body::before {
     width: 100vw;
     height: 100vh;
     z-index: -1;
-    background: url('../../assets/img/landscape-bg.png') center center/cover no-repeat;
+    background: url('https://cdn.hk01.com/di/media/images/283787/org/2f557ce626504215f36f88c96c2bf8a8.jpg/0ZvRzxnRiEiBKP_6X_y9nc37AeDR_c-obsw2qW7MNqk') center center/cover no-repeat;
     filter: blur(6px) brightness(0.7);
     pointer-events: none;
     transition: background-image 0.3s;
@@ -401,7 +401,7 @@ body::before {
     }
 
     body::before {
-        background: url('../../assets/img/portrait-bg.png') center center/cover no-repeat;
+        background: url('https://i.pinimg.com/736x/e2/57/52/e25752eb032643b92b6e0b948d296394.jpg') center center/cover no-repeat;
         filter: blur(12px) brightness(0.7);
     }
 }
