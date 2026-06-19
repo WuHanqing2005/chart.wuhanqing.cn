@@ -1,9 +1,9 @@
 <!-- 🛫 顶部 Banner 区域 -->
-<h1 align="center">✈️ 清寒的航图查询网站</h1>
-<h2 align="center"><a href="https://chart.wuhanqing.cn" target="_blank">chart.wuhanqing.cn</a></h2>
-<p align="right">
-  —— 一个为飞行爱好者打造的航图查询网站
-</p>
+<div align="center">
+  <h1>✈️ 清寒的航图查询网站</h1>
+  <h2><a href="https://chart.wuhanqing.cn" target="_blank">chart.wuhanqing.cn</a></h2>
+  <p align="right">—— 一个为飞行爱好者打造的航图查询网站</p>
+</div>
 
 ---
 
