@@ -1,12 +1,8 @@
 <!-- 🛫 顶部 Banner 区域 -->
-<p align="center">
-  <h1 align="center">✈️ Daniel_清寒的航图查询网站</h1>
-
-  <h2 align="center"><a href="https://chart.wuhanqing.cn" target="_blank">chart.wuhanqing.cn</a></h2>
-
-  <p align="center">
-    一个由飞行爱好者为飞行爱好者打造的航图查询网站  
-  </p>
+<h1 align="center">✈️ 清寒的航图查询网站</h1>
+<h2 align="center"><a href="https://chart.wuhanqing.cn" target="_blank">chart.wuhanqing.cn</a></h2>
+<p align="right">
+  —— 一个为飞行爱好者打造的航图查询网站
 </p>
 
 ---
@@ -14,14 +10,10 @@
 ## 🌏 网站简介
 
 **chart.wuhanqing.cn** 是由 **吴瀚庆（Daniel）** 创建的一个简易航图查询网站。  
-网站基于 **热铁盒网页托管**，创建于 **2025年1月20日**，旨在造福广大飞友，方便查询航图。  
+网站创建于 **2025年1月20日**，旨在造福广大飞友，方便查询航图。  
 
-> ✨ 目前已更新：  
-> - 全部公开的 **EAIP2025-09.V1.4_Web 版 CAAC 英文版机场航图**  
-> - **韩国大部分机场航图**  
-> - **东京羽田机场航图**  
->
-> 🚧 后续将继续更新更多国内外机场，欢迎提出航图更新需求！
+✨ 目前已更新：**中国CAAC 英文版机场航图**、**韩国、日本大部分机场航图**。
+🚧 后续将继续更新更多国内外机场，欢迎提出航图更新需求！
 
 ---
 
