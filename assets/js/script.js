@@ -226,7 +226,7 @@ function generateAirportList(query) {
                 pageItem.textContent = isChinese ? translatePageName(page) : page;
 
                 // 航图PDF加载路径
-                pageItem.onclick = () => showPDF(`https://r2.wuhanqing.cn/chart-wuhanqing-cn/Terminal/${airport.folder}/${page}`);
+                pageItem.onclick = () => showPDF(`./Terminal/${airport.folder}/${page}`);
                 subList.appendChild(pageItem);
             });
             airportList.appendChild(subList);
